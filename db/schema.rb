@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_09_111524) do
-
+ActiveRecord::Schema[7.0].define(version: 2021_05_09_111524) do
   create_table "dog_houses", force: :cascade do |t|
     t.string "image"
     t.string "name"
@@ -20,8 +19,8 @@ ActiveRecord::Schema.define(version: 2021_05_09_111524) do
     t.boolean "favorite"
     t.decimal "latitude", precision: 10, scale: 6
     t.decimal "longitude", precision: 10, scale: 6
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -29,8 +28,8 @@ ActiveRecord::Schema.define(version: 2021_05_09_111524) do
     t.string "comment"
     t.integer "rating"
     t.integer "dog_house_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["dog_house_id"], name: "index_reviews_on_dog_house_id"
   end
 
